@@ -16,13 +16,13 @@ provider "aws" {
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
 
-  # Configuración para LocalStack / Flocki local o en Raspberry Pi
+  # Configuración para LocalStack o en Raspberry Pi
   endpoints {
-    ec2 = "http://localhost:4500"
+    ec2 = "http://localhost:4566"
   }
 }
 
-# --- RED ---
+
 resource "aws_vpc" "main_vpc" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
@@ -62,7 +62,6 @@ resource "aws_subnet" "private_db_subnet" {
   }
 }
 
-# --- TABLAS DE RUTEO ---
 resource "aws_route_table" "public_rt" {
   vpc_id = aws_vpc.main_vpc.id
 
@@ -94,9 +93,9 @@ resource "aws_route_table_association" "db_assoc" {
   route_table_id = aws_route_table.private_rt.id
 }
 
-# --- GRUPOS DE SEGURIDAD ---
+
 resource "aws_security_group" "alb_sg" {
-  name        = "sg-alb-publico"
+  name        = "alb-publico"
   description = "Permite trafico HTTP/HTTPS desde el exterior"
   vpc_id      = aws_vpc.main_vpc.id
 
@@ -129,7 +128,7 @@ resource "aws_security_group" "alb_sg" {
 }
 
 resource "aws_security_group" "app_sg" {
-  name        = "sg-microservicios"
+  name        = "microservicios"
   description = "Permite trafico SOLO desde el Load Balancer Publico"
   vpc_id      = aws_vpc.main_vpc.id
 
@@ -149,13 +148,12 @@ resource "aws_security_group" "app_sg" {
   }
 
   tags = {
-    Name = "sg-microservicios"
+    Name = "microservicios"
   }
 }
 
-# Definición simplificada de servicios para infraestructura/observabilidad
 resource "aws_security_group" "db_sg" {
-  name        = "sg-bases-de-datos"
+  name        = "bases-de-datos"
   description = "Permite trafico SOLO desde los microservicios"
   vpc_id      = aws_vpc.main_vpc.id
 
@@ -199,6 +197,6 @@ resource "aws_security_group" "db_sg" {
   }
 
   tags = {
-    Name = "sg-bases-de-datos"
+    Name = "bases-de-datos"
   }
 }

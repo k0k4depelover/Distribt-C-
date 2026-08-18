@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+infraestructure/.terraform.lock.hcl
+infraestructure/terraform.tfstate.backup
+infraestructure/terraform.tfstate
+infraestructure/.terraform/
+
+
 # User-specific files
 *.rsuser
 *.suo
