@@ -1,14 +1,12 @@
-
-terraform{
-    required_version = ">= 1.5.0"    
-    required_providers{
-        aws ={
-            source = "hashicorp/aws"
-            version= "~> 5.0"
-        }
+terraform {
+  required_version = ">= 1.5.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
     }
-
-} 
+  }
+}
 
 provider "aws" {
   region                      = "us-east-1"
@@ -18,14 +16,13 @@ provider "aws" {
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
 
-
-# Siguiente paso, ejecutar Floci en una Rasperry PI y cambiar esta configuracion por la IP del equipo.
+  # Configuración para LocalStack / Flocki local o en Raspberry Pi
   endpoints {
     ec2 = "http://localhost:4500"
   }
 }
 
-
+# --- RED ---
 resource "aws_vpc" "main_vpc" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
@@ -37,7 +34,6 @@ resource "aws_vpc" "main_vpc" {
   }
 }
 
-
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main_vpc.id
 
@@ -45,17 +41,6 @@ resource "aws_internet_gateway" "igw" {
     Name = "igw-lab"
   }
 }
-
-
-
-resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.main_vpc.id
-
-  tags = {
-    Name = "igw-lab"
-  }
-}
-
 
 resource "aws_subnet" "private_app_subnet" {
   vpc_id            = aws_vpc.main_vpc.id
@@ -77,7 +62,7 @@ resource "aws_subnet" "private_db_subnet" {
   }
 }
 
-
+# --- TABLAS DE RUTEO ---
 resource "aws_route_table" "public_rt" {
   vpc_id = aws_vpc.main_vpc.id
 
@@ -109,7 +94,7 @@ resource "aws_route_table_association" "db_assoc" {
   route_table_id = aws_route_table.private_rt.id
 }
 
-
+# --- GRUPOS DE SEGURIDAD ---
 resource "aws_security_group" "alb_sg" {
   name        = "sg-alb-publico"
   description = "Permite trafico HTTP/HTTPS desde el exterior"
@@ -140,5 +125,80 @@ resource "aws_security_group" "alb_sg" {
 
   tags = {
     Name = "sg-alb-publico"
+  }
+}
+
+resource "aws_security_group" "app_sg" {
+  name        = "sg-microservicios"
+  description = "Permite trafico SOLO desde el Load Balancer Publico"
+  vpc_id      = aws_vpc.main_vpc.id
+
+  ingress {
+    description     = "Trafico de la app desde el ALB"
+    from_port       = 8080
+    to_port         = 8080
+    protocol        = "tcp"
+    security_groups = [aws_security_group.alb_sg.id]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "sg-microservicios"
+  }
+}
+
+# Definición simplificada de servicios para infraestructura/observabilidad
+resource "aws_security_group" "db_sg" {
+  name        = "sg-bases-de-datos"
+  description = "Permite trafico SOLO desde los microservicios"
+  vpc_id      = aws_vpc.main_vpc.id
+
+  dynamic "ingress" {
+    for_each = [
+      { port = 1514, proto = "tcp", desc = "Graylog Syslog TCP" },
+      { port = 1514, proto = "udp", desc = "Graylog Syslog UDP" },
+      { port = 3000, proto = "tcp", desc = "Grafana" },
+      { port = 3306, proto = "tcp", desc = "MySQL" },
+      { port = 4317, proto = "tcp", desc = "OTel Collector gRPC" },
+      { port = 5672, proto = "tcp", desc = "RabbitMQ AMQP" },
+      { port = 8200, proto = "tcp", desc = "HashiCorp Vault" },
+      { port = 8400, proto = "tcp", desc = "Consul RPC" },
+      { port = 8500, proto = "tcp", desc = "Consul HTTP" },
+      { port = 8600, proto = "tcp", desc = "Consul DNS TCP" },
+      { port = 8600, proto = "udp", desc = "Consul DNS UDP" },
+      { port = 8888, proto = "tcp", desc = "OTel Collector Metrics" },
+      { port = 8889, proto = "tcp", desc = "OTel Collector Prometheus exporter" },
+      { port = 9000, proto = "tcp", desc = "Graylog Web Interface" },
+      { port = 9090, proto = "tcp", desc = "Prometheus" },
+      { port = 9411, proto = "tcp", desc = "Zipkin" },
+      { port = 12201, proto = "tcp", desc = "Graylog GELF TCP" },
+      { port = 12201, proto = "udp", desc = "Graylog GELF UDP" },
+      { port = 15672, proto = "tcp", desc = "RabbitMQ Management" },
+      { port = 27017, proto = "tcp", desc = "MongoDB" }
+    ]
+    content {
+      description     = ingress.value.desc
+      from_port       = ingress.value.port
+      to_port         = ingress.value.port
+      protocol        = ingress.value.proto
+      security_groups = [aws_security_group.app_sg.id]
+    }
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "sg-bases-de-datos"
   }
 }
