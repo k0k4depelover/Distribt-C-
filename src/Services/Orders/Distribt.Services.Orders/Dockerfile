@@ -1,31 +1,29 @@
-FROM mrc.microsoft.com/dotnet/sdk:8.0 AS build
-
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-COPY ["src/Services/Orders/Distribt.Services.Orders/Distribt.Services.Orders.csproj", "Orders/Distribt.Services.Orders/"]
-COPY ["src/Services/Orders/Distribt.Services.Orders.BusinessLogic/Distribt.Services.Orders.BusinessLogic.csproj", "Orders/Distribt.Services.Orders.BusinessLogic/"]
-COPY ["src/Services/Orders/Distribt.Services.Orders.Consumer/Distribt.Services.Orders.Consumer.csproj", "Orders/Distribt.Services.Orders.Consumer/"]
-COPY ["src/Services/Orders/Distribt.Services.Orders.Dto/Distribt.Services.Orders.Dto.csproj", "Orders/Distribt.Services.Orders.Dto/"]
+COPY ["SharedSetup/SharedSetup.csproj", "SharedSetup/"]
 
-RUN dotnet restore "src/Services/Orders/Distribt.Services.Orders/Distribt.Services.Orders.csproj"
+COPY ["Orders/Distribt.Services.Orders/Distribt.Services.Orders.csproj", "Orders/Distribt.Services.Orders/"]
+COPY ["Orders/Distribt.Services.Orders.BusinessLogic/Distribt.Services.Orders.BusinessLogic.csproj", "Orders/Distribt.Services.Orders.BusinessLogic/"]
+COPY ["Orders/Distribt.Services.Orders.Consumer/Distribt.Services.Orders.Consumer.csproj", "Orders/Distribt.Services.Orders.Consumer/"]
+COPY ["Orders/Distribt.Services.Orders.Dto/Distribt.Services.Orders.Dto.csproj", "Orders/Distribt.Services.Orders.Dto/"]
 
-COPY . .
+RUN dotnet restore "Orders/Distribt.Services.Orders/Distribt.Services.Orders.csproj"
 
-WORKDIR "/src/Services/Orders/Distribt.Services.Orders"
 
+COPY ["SharedSetup/", "SharedSetup/"]
+COPY ["Orders/", "Orders/"]
+
+WORKDIR "/src/Orders/Distribt.Services.Orders"
 RUN dotnet publish "Distribt.Services.Orders.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 
-
-FROM mrc.microsoft.com/dotnet/aspnet:8.0 AS final
-
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 
 COPY --from=build /app/publish .
 
-ENV ASPNETCORE_URLS=http://+:8000
+ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
 
-
-ENTRYPOINT [ "Distribt.Services.Orders.dll" ]
-
+ENTRYPOINT ["dotnet", "Distribt.Services.Orders.dll"]
