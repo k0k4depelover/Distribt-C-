@@ -3,8 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 
-COPY ["Shared/Distribt.Shared.Setup/", "SharedSetup/Distribt.Shared.Setup/"]
-
+COPY ["Shared/Distribt.Shared.Setup/Distribt.Shared.Setup.csproj", "Shared/Distribt.Shared.Setup/"]
 COPY ["Subscriptions/Distribt.Services.Subscriptions/Distribt.Services.Subscriptions.csproj", "Subscriptions/Distribt.Services.Subscriptions/"]
 COPY ["Subscriptions/Distribt.Services.Subscriptions.Dtos/Distribt.Services.Subscriptions.Dtos.csproj", "Subscriptions/Distribt.Services.Subscriptions.Dtos/"]
 
