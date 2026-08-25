@@ -16,7 +16,7 @@ provider "aws" {
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
 
-  # Configuración para LocalStack o en Raspberry Pi
+  # Configuración para Floci o en Raspberry Pi
   endpoints {
     ec2 = "http://localhost:4566"
   }
@@ -39,6 +39,17 @@ resource "aws_internet_gateway" "igw" {
 
   tags = {
     Name = "igw-lab"
+  }
+}
+
+
+resource "aws_subnet" "public_app_subnet" {
+  vpc_id = aws_vpc.main_vpc.id
+  cidr_block = "10.0.1.0/24"
+  availability_zone = "us-east-1a"
+
+  tags = {
+    Name = "subnet-public-app-1a"
   }
 }
 
@@ -83,6 +94,12 @@ resource "aws_route_table" "private_rt" {
   }
 }
 
+resource "aws_route_table_association" "public_app_assoc" {
+  subnet_id = aws_subnet.public_app_subnet.id
+  route_table_id = aws_route_table.public_rt.id
+}
+
+
 resource "aws_route_table_association" "app_assoc" {
   subnet_id      = aws_subnet.private_app_subnet.id
   route_table_id = aws_route_table.private_rt.id
@@ -91,6 +108,33 @@ resource "aws_route_table_association" "app_assoc" {
 resource "aws_route_table_association" "db_assoc" {
   subnet_id      = aws_subnet.private_db_subnet.id
   route_table_id = aws_route_table.private_rt.id
+}
+
+resource "aws_eip" "nat" {
+  domain = "vpc"
+  depends_on = [ aws_internet_gateway.igw ]
+
+  tags = {
+    Name = "eip-nat-gateway"
+  }
+}
+
+
+resource "aws_nat_gateway" "nat" {
+  allocation_id = aws_eip.nat.id
+  subnet_id = aws_subnet.public_app_subnet.id
+
+  tags = {
+    Name = "main-nat-gateway"
+  }
+  depends_on = [aws_internet_gateway.igw]
+}
+
+
+resource "aws_route" "private_nat_router" {
+  route_table_id = aws_route_table.private_rt.id
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id = aws_nat_gateway.nat.id
 }
 
 
