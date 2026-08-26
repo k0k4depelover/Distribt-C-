@@ -16,11 +16,13 @@ provider "aws" {
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
 
-  # Configuración para Floci o en Raspberry Pi
+
   endpoints {
     ec2 = "http://localhost:4566"
     ecr = "http://localhost:4566"
     ecs = "http://localhost:4566"
+    elbv2 = "http://localhost:4566"
+    logs = "http://localhost:4566"
   }
 }
 
