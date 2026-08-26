@@ -19,6 +19,8 @@ provider "aws" {
   # Configuración para Floci o en Raspberry Pi
   endpoints {
     ec2 = "http://localhost:4566"
+    ecr = "http://localhost:4566"
+    ecs = "http://localhost:4566"
   }
 }
 
@@ -242,5 +244,14 @@ resource "aws_security_group" "db_sg" {
 
   tags = {
     Name = "bases-de-datos"
+  }
+}
+
+resource "aws_ecs_cluster" "main" {
+  name = "distribt-ecs-cluster"
+
+  tags = {
+    Environment = "local"
+    Project     = "Distribt"
   }
 }
