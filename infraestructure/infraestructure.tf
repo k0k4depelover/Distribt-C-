@@ -186,6 +186,14 @@ resource "aws_security_group" "app_sg" {
     security_groups = [aws_security_group.alb_sg.id]
   }
 
+  ingress {
+    description = "Comunicacion entre microservicios"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    self        = true # Permite comunicarse entre si en el puerto 8080
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
