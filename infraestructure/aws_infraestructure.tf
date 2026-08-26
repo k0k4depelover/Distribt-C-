@@ -24,23 +24,6 @@ resource "aws_lb" "main_alb" {
 }
 
 
-resource "aws_lb" "main_alb" {
-  name               = "distribt-alb"
-  internal           = false
-  load_balancer_type = "application"
-  security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = [aws_subnet.public_app_subnet.id]
-
-  tags = {
-    Name        = "distribt-alb"
-    Environment = "Local-Floci"
-    Project     = "Distribt"
-  }
-}
-
-)
-
-
 resource "aws_lb_target_group" "api_tg" {
   name        = "distribt-api-tg"
   port        = 8080
