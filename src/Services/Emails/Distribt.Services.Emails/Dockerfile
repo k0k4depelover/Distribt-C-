@@ -1,23 +1,16 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-
 WORKDIR /src
 
-COPY ["src/Services/Emails/Distribt.Services.Emails/Distribt.Services.Emails.csproj" , "Services/Emails"]
-COPY ["src/Shared/Distribt.Shared.Setup/Distribt.Shared.Setup.csproj", "Shared/Distribt.Shared.Setup/"] 
+COPY GlobalSettings.msbuild ./
+COPY src/ ./src/
 
+RUN dotnet restore "src/Services/Emails/Distribt.Services.Emails/Distribt.Services.Emails.csproj"
 
-RUN dotnet restore "Services/Emails/Distribt.Services.Emails/Distribt.Services.Emails.csproj"
+WORKDIR /src/src/Services/Emails/Distribt.Services.Emails
+RUN dotnet publish "Distribt.Services.Emails.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-COPY ["src/Services/Emails/Distribt.Services.Emails/", "Services/Emails/Distribt.Services.Emails/"]
-COPY ["src/Shared/Distribt.Shared.Setup/", "Shared/Distribt.Shared.Setup/"]
-
-WORKDIR "/src/Services/Emails/Distribt.Services.Emails"
-RUN dotnet build "Distribt.Services.Emails.csproj" -c Release -o /app/build
-RUN dotnet publish "Distribt.Services.Emails.csproj" -c Release -o /app/publish
-
-FROM mrc.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-
-ENV ASPNETCORE_URLS=http//+:8000
-EXPOSE 8080
+ENV ASPNETCORE_URLS=http://+:8000
+EXPOSE 8000
