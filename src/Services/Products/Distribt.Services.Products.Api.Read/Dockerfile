@@ -1,21 +1,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-
 WORKDIR /src
 
+COPY GlobalSettings.msbuild ./
+COPY src/ ./src
 
-COPY ["Shared/Distribt.Shared.Setup/", "SharedSetup/Distribt.Shared.Setup/"]
+RUN dotnet restore "src/Services/Products/Distribt.Services.Products.Api.Read/Distribt.Services.Products.Api.Read.csproj"
 
-COPY ["Products/Distribt.Services.Products.Api.Read/Distribt.Services.Products.Api.Read.csproj", "Products/Distribt.Services.Products.Api.Read/"]
-COPY ["Products/Distribt.Services.Products.BusinessLogic/Distribt.Services.Products.BusinessLogic.csproj", "Products/Distribt.Services.Products.BusinessLogic/"]
-
-
-RUN dotnet restore "Products/Distribt.Services.Products.Api.Read/Distribt.Services.Products.Api.Read.csproj"
-
-COPY ["Shared/Distribt.Shared.Setup/", "SharedSetup/Distribt.Shared.Setup"]
-COPY ["Products/", "Products/"]
-
-
-WORKDIR "/src/Products/Distribt.Services.Products.Api.Read"
+WORKDIR "/src/src/Services/Products/Distribt.Services.Products.Api.Read"
 RUN dotnet publish "Distribt.Services.Products.Api.Read.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 
@@ -26,5 +17,3 @@ COPY --from=build /app/publish .
 
 ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
-
-ENTRYPOINT ["dotnet", "Distribt.Services.Products.Api.Read.dll"]
