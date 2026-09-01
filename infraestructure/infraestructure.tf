@@ -4,15 +4,15 @@ resource "aws_launch_template" "ecs_nodes" {
   instance_type = "t2.micro"
 
   iam_instance_profile {
-    name = aws_iam_instance_profile.ecs_node_profile.name
+    name = aws_iam_instance_profile.ec2_role_profile.name
   }
 
   network_interfaces {
-    associate_public_ip_address = fals
+    associate_public_ip_address = false
     security_groups =  [aws_ecs_cluster.main.name]
   }
 
-  user_data = base64decode(<<-EOF
+  user_data = base64encode(<<-EOF
     #!/bin/bash
     echo "ECS_CLUSTER = ${aws_ecs_cluster.main.name} >> /etc/ecs/ecs.config"
     EOF
@@ -41,11 +41,11 @@ resource "aws_iam_role" "ecs_node_role" {
 
 resource "aws_iam_role_policy_attachment" "ecs_node_role_policy" {
   role = aws_iam_role.ecs_execution_role.name
-  policy_arn = "arn:aws:iam:aws:policy/service-role/AmazonEC2ContainerServicesforEC2Role"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role"
   }
   resource "aws_iam_instance_profile" "ec2_role_profile"{
     name= "ecs-node-profile"
-    role = aws_iam_role.ecs_role.name
+    role = aws_iam_role.ecs_node_role.name
   
 }
 

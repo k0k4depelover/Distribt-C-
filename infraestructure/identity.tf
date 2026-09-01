@@ -1,7 +1,7 @@
 resource "aws_iam_role" "ecs_execution_role"{
     name= "execution_role"
 
-    assume_role_policy = jsondecode(
+    assume_role_policy = jsonencode(
         {
             Version= "2012-10-17"
 
@@ -10,7 +10,7 @@ resource "aws_iam_role" "ecs_execution_role"{
                     Action = "sts:AssumeRole"
                     Effect = "Allow"
                     Principal = {
-                        Service = "ecs-tasks.anab"
+                        Service = "ecs-tasks.amazonaws.com"
                     }
                 }
             ]
@@ -20,7 +20,7 @@ resource "aws_iam_role" "ecs_execution_role"{
 
     tags = {
       Environment = "Local-Floci"
-      Project = Distribt
+      Project = "Distribt"
     }
 }
 
