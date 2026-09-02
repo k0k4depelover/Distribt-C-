@@ -1,0 +1,2744 @@
+{
+  "version": 4,
+  "terraform_version": "1.15.8",
+  "serial": 123,
+  "lineage": "6af6cb75-a63c-0944-11ec-41f7a417acb2",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_cloudwatch_log_group",
+      "name": "ecs_logs",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:logs:us-east-1:000000000000:log-group:/ecs/distribt-services",
+            "id": "/ecs/distribt-services",
+            "kms_key_id": "",
+            "log_group_class": "",
+            "name": "/ecs/distribt-services",
+            "name_prefix": "",
+            "retention_in_days": 1,
+            "skip_destroy": false,
+            "tags": {
+              "Environment": "Local-Floci",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "Local-Floci",
+              "Project": "Distribt"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_ecr_repository",
+      "name": "services",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "distribt-emails",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:000000000000:repository/distribt-emails",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "distribt-emails",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": false
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "distribt-emails",
+            "registry_id": "000000000000",
+            "repository_url": "000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-emails",
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "distribt-orders",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:000000000000:repository/distribt-orders",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "distribt-orders",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": false
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "distribt-orders",
+            "registry_id": "000000000000",
+            "repository_url": "000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-orders",
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "distribt-orders-consumer",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:000000000000:repository/distribt-orders-consumer",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "distribt-orders-consumer",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": false
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "distribt-orders-consumer",
+            "registry_id": "000000000000",
+            "repository_url": "000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-orders-consumer",
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "distribt-products-api-read",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:000000000000:repository/distribt-products-api-read",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "distribt-products-api-read",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": false
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "distribt-products-api-read",
+            "registry_id": "000000000000",
+            "repository_url": "000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-products-api-read",
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "distribt-products-api-write",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:000000000000:repository/distribt-products-api-write",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "distribt-products-api-write",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": false
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "distribt-products-api-write",
+            "registry_id": "000000000000",
+            "repository_url": "000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-products-api-write",
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "distribt-products-consumer",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:000000000000:repository/distribt-products-consumer",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "distribt-products-consumer",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": false
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "distribt-products-consumer",
+            "registry_id": "000000000000",
+            "repository_url": "000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-products-consumer",
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "distribt-subscriptions",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:000000000000:repository/distribt-subscriptions",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "distribt-subscriptions",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": false
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "distribt-subscriptions",
+            "registry_id": "000000000000",
+            "repository_url": "000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-subscriptions",
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "distribt-subscriptions-consumer",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:us-east-1:000000000000:repository/distribt-subscriptions-consumer",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "distribt-subscriptions-consumer",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": false
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "distribt-subscriptions-consumer",
+            "registry_id": "000000000000",
+            "repository_url": "000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-subscriptions-consumer",
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_ecs_cluster",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "configuration": [],
+            "id": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "name": "distribt-ecs-cluster",
+            "service_connect_defaults": [],
+            "setting": [],
+            "tags": {
+              "Environment": "local",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "local",
+              "Project": "Distribt"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_ecs_service",
+      "name": "services",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "distribt-emails",
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "availability_zone_rebalancing": "",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "deployment_circuit_breaker": [],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 100,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": false,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": null,
+            "id": "arn:aws:ecs:us-east-1:000000000000:service/distribt-ecs-cluster/distribt-emails",
+            "launch_type": "EC2",
+            "load_balancer": [],
+            "name": "distribt-emails",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "subnets": [
+                  "subnet-ed0af04e"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "",
+            "propagate_tags": "",
+            "scheduling_strategy": "",
+            "service_connect_configuration": [],
+            "service_registries": [],
+            "tags": null,
+            "tags_all": {},
+            "task_definition": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-emails:2",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_ecs_cluster.main",
+            "aws_ecs_task_definition.services",
+            "aws_iam_role.ecs_execution_role",
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        },
+        {
+          "index_key": "distribt-orders",
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "availability_zone_rebalancing": "",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "deployment_circuit_breaker": [],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 100,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": false,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": null,
+            "id": "arn:aws:ecs:us-east-1:000000000000:service/distribt-ecs-cluster/distribt-orders",
+            "launch_type": "EC2",
+            "load_balancer": [],
+            "name": "distribt-orders",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "subnets": [
+                  "subnet-ed0af04e"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "",
+            "propagate_tags": "",
+            "scheduling_strategy": "",
+            "service_connect_configuration": [],
+            "service_registries": [],
+            "tags": null,
+            "tags_all": {},
+            "task_definition": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-orders:2",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_ecs_cluster.main",
+            "aws_ecs_task_definition.services",
+            "aws_iam_role.ecs_execution_role",
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        },
+        {
+          "index_key": "distribt-orders-consumer",
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "availability_zone_rebalancing": "",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "deployment_circuit_breaker": [],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 100,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": false,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": null,
+            "id": "arn:aws:ecs:us-east-1:000000000000:service/distribt-ecs-cluster/distribt-orders-consumer",
+            "launch_type": "EC2",
+            "load_balancer": [],
+            "name": "distribt-orders-consumer",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "subnets": [
+                  "subnet-ed0af04e"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "",
+            "propagate_tags": "",
+            "scheduling_strategy": "",
+            "service_connect_configuration": [],
+            "service_registries": [],
+            "tags": null,
+            "tags_all": {},
+            "task_definition": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-orders-consumer:2",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_ecs_cluster.main",
+            "aws_ecs_task_definition.services",
+            "aws_iam_role.ecs_execution_role",
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        },
+        {
+          "index_key": "distribt-products-api-read",
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "availability_zone_rebalancing": "",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "deployment_circuit_breaker": [],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 100,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": false,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": null,
+            "id": "arn:aws:ecs:us-east-1:000000000000:service/distribt-ecs-cluster/distribt-products-api-read",
+            "launch_type": "EC2",
+            "load_balancer": [],
+            "name": "distribt-products-api-read",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "subnets": [
+                  "subnet-ed0af04e"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "",
+            "propagate_tags": "",
+            "scheduling_strategy": "",
+            "service_connect_configuration": [],
+            "service_registries": [],
+            "tags": null,
+            "tags_all": {},
+            "task_definition": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-api-read:2",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_ecs_cluster.main",
+            "aws_ecs_task_definition.services",
+            "aws_iam_role.ecs_execution_role",
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        },
+        {
+          "index_key": "distribt-products-api-write",
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "availability_zone_rebalancing": "",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "deployment_circuit_breaker": [],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 100,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": false,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": null,
+            "id": "arn:aws:ecs:us-east-1:000000000000:service/distribt-ecs-cluster/distribt-products-api-write",
+            "launch_type": "EC2",
+            "load_balancer": [],
+            "name": "distribt-products-api-write",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "subnets": [
+                  "subnet-ed0af04e"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "",
+            "propagate_tags": "",
+            "scheduling_strategy": "",
+            "service_connect_configuration": [],
+            "service_registries": [],
+            "tags": null,
+            "tags_all": {},
+            "task_definition": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-api-write:2",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_ecs_cluster.main",
+            "aws_ecs_task_definition.services",
+            "aws_iam_role.ecs_execution_role",
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        },
+        {
+          "index_key": "distribt-products-consumer",
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "availability_zone_rebalancing": "",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "deployment_circuit_breaker": [],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 100,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": false,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": null,
+            "id": "arn:aws:ecs:us-east-1:000000000000:service/distribt-ecs-cluster/distribt-products-consumer",
+            "launch_type": "EC2",
+            "load_balancer": [],
+            "name": "distribt-products-consumer",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "subnets": [
+                  "subnet-ed0af04e"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "",
+            "propagate_tags": "",
+            "scheduling_strategy": "",
+            "service_connect_configuration": [],
+            "service_registries": [],
+            "tags": null,
+            "tags_all": {},
+            "task_definition": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-consumer:2",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_ecs_cluster.main",
+            "aws_ecs_task_definition.services",
+            "aws_iam_role.ecs_execution_role",
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        },
+        {
+          "index_key": "distribt-subscriptions",
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "availability_zone_rebalancing": "",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "deployment_circuit_breaker": [],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 100,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": false,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": null,
+            "id": "arn:aws:ecs:us-east-1:000000000000:service/distribt-ecs-cluster/distribt-subscriptions",
+            "launch_type": "EC2",
+            "load_balancer": [],
+            "name": "distribt-subscriptions",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "subnets": [
+                  "subnet-ed0af04e"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "",
+            "propagate_tags": "",
+            "scheduling_strategy": "",
+            "service_connect_configuration": [],
+            "service_registries": [],
+            "tags": null,
+            "tags_all": {},
+            "task_definition": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-subscriptions:2",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_ecs_cluster.main",
+            "aws_ecs_task_definition.services",
+            "aws_iam_role.ecs_execution_role",
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        },
+        {
+          "index_key": "distribt-subscriptions-consumer",
+          "schema_version": 1,
+          "attributes": {
+            "alarms": [],
+            "availability_zone_rebalancing": "",
+            "capacity_provider_strategy": [],
+            "cluster": "arn:aws:ecs:us-east-1:000000000000:cluster/distribt-ecs-cluster",
+            "deployment_circuit_breaker": [],
+            "deployment_controller": [
+              {
+                "type": "ECS"
+              }
+            ],
+            "deployment_maximum_percent": 200,
+            "deployment_minimum_healthy_percent": 100,
+            "desired_count": 1,
+            "enable_ecs_managed_tags": false,
+            "enable_execute_command": false,
+            "force_delete": null,
+            "force_new_deployment": null,
+            "health_check_grace_period_seconds": 0,
+            "iam_role": null,
+            "id": "arn:aws:ecs:us-east-1:000000000000:service/distribt-ecs-cluster/distribt-subscriptions-consumer",
+            "launch_type": "EC2",
+            "load_balancer": [],
+            "name": "distribt-subscriptions-consumer",
+            "network_configuration": [
+              {
+                "assign_public_ip": false,
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "subnets": [
+                  "subnet-ed0af04e"
+                ]
+              }
+            ],
+            "ordered_placement_strategy": [],
+            "placement_constraints": [],
+            "platform_version": "",
+            "propagate_tags": "",
+            "scheduling_strategy": "",
+            "service_connect_configuration": [],
+            "service_registries": [],
+            "tags": null,
+            "tags_all": {},
+            "task_definition": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-subscriptions-consumer:2",
+            "timeouts": null,
+            "triggers": {},
+            "volume_configuration": [],
+            "vpc_lattice_configurations": [],
+            "wait_for_steady_state": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_ecs_cluster.main",
+            "aws_ecs_task_definition.services",
+            "aws_iam_role.ecs_execution_role",
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_ecs_task_definition",
+      "name": "services",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "distribt-emails",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-emails:2",
+            "arn_without_revision": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-emails",
+            "container_definitions": "[{\"environment\":[{\"name\":\"ASPNETCORE_ENVIRONMENT\",\"value\":\"Development\"},{\"name\":\"ASPNETCORE_URLS\",\"value\":\"http://+:8080\"}],\"essential\":true,\"image\":\"000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-emails:latest\",\"name\":\"distribt-emails\",\"portMappings\":[{\"containerPort\":8080,\"hostPort\":8080,\"protocol\":\"tcp\"}]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::000000000000:role/execution_role",
+            "family": "distribt-emails",
+            "id": "distribt-emails",
+            "inference_accelerator": [],
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "requires_compatibilities": [
+              "EC2"
+            ],
+            "revision": 2,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": null,
+            "tags_all": {},
+            "task_role_arn": "",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_iam_role.ecs_execution_role"
+          ]
+        },
+        {
+          "index_key": "distribt-orders",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-orders:2",
+            "arn_without_revision": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-orders",
+            "container_definitions": "[{\"environment\":[{\"name\":\"ASPNETCORE_ENVIRONMENT\",\"value\":\"Development\"},{\"name\":\"ASPNETCORE_URLS\",\"value\":\"http://+:8080\"}],\"essential\":true,\"image\":\"000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-orders:latest\",\"name\":\"distribt-orders\",\"portMappings\":[{\"containerPort\":8080,\"hostPort\":8080,\"protocol\":\"tcp\"}]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::000000000000:role/execution_role",
+            "family": "distribt-orders",
+            "id": "distribt-orders",
+            "inference_accelerator": [],
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "requires_compatibilities": [
+              "EC2"
+            ],
+            "revision": 2,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": null,
+            "tags_all": {},
+            "task_role_arn": "",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_iam_role.ecs_execution_role"
+          ]
+        },
+        {
+          "index_key": "distribt-orders-consumer",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-orders-consumer:2",
+            "arn_without_revision": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-orders-consumer",
+            "container_definitions": "[{\"environment\":[{\"name\":\"ASPNETCORE_ENVIRONMENT\",\"value\":\"Development\"},{\"name\":\"ASPNETCORE_URLS\",\"value\":\"http://+:8080\"}],\"essential\":true,\"image\":\"000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-orders-consumer:latest\",\"name\":\"distribt-orders-consumer\",\"portMappings\":[{\"containerPort\":8080,\"hostPort\":8080,\"protocol\":\"tcp\"}]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::000000000000:role/execution_role",
+            "family": "distribt-orders-consumer",
+            "id": "distribt-orders-consumer",
+            "inference_accelerator": [],
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "requires_compatibilities": [
+              "EC2"
+            ],
+            "revision": 2,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": null,
+            "tags_all": {},
+            "task_role_arn": "",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_iam_role.ecs_execution_role"
+          ]
+        },
+        {
+          "index_key": "distribt-products-api-read",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-api-read:2",
+            "arn_without_revision": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-api-read",
+            "container_definitions": "[{\"environment\":[{\"name\":\"ASPNETCORE_ENVIRONMENT\",\"value\":\"Development\"},{\"name\":\"ASPNETCORE_URLS\",\"value\":\"http://+:8080\"}],\"essential\":true,\"image\":\"000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-products-api-read:latest\",\"name\":\"distribt-products-api-read\",\"portMappings\":[{\"containerPort\":8080,\"hostPort\":8080,\"protocol\":\"tcp\"}]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::000000000000:role/execution_role",
+            "family": "distribt-products-api-read",
+            "id": "distribt-products-api-read",
+            "inference_accelerator": [],
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "requires_compatibilities": [
+              "EC2"
+            ],
+            "revision": 2,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": null,
+            "tags_all": {},
+            "task_role_arn": "",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_iam_role.ecs_execution_role"
+          ]
+        },
+        {
+          "index_key": "distribt-products-api-write",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-api-write:2",
+            "arn_without_revision": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-api-write",
+            "container_definitions": "[{\"environment\":[{\"name\":\"ASPNETCORE_ENVIRONMENT\",\"value\":\"Development\"},{\"name\":\"ASPNETCORE_URLS\",\"value\":\"http://+:8080\"}],\"essential\":true,\"image\":\"000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-products-api-write:latest\",\"name\":\"distribt-products-api-write\",\"portMappings\":[{\"containerPort\":8080,\"hostPort\":8080,\"protocol\":\"tcp\"}]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::000000000000:role/execution_role",
+            "family": "distribt-products-api-write",
+            "id": "distribt-products-api-write",
+            "inference_accelerator": [],
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "requires_compatibilities": [
+              "EC2"
+            ],
+            "revision": 2,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": null,
+            "tags_all": {},
+            "task_role_arn": "",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_iam_role.ecs_execution_role"
+          ]
+        },
+        {
+          "index_key": "distribt-products-consumer",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-consumer:2",
+            "arn_without_revision": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-products-consumer",
+            "container_definitions": "[{\"environment\":[{\"name\":\"ASPNETCORE_ENVIRONMENT\",\"value\":\"Development\"},{\"name\":\"ASPNETCORE_URLS\",\"value\":\"http://+:8080\"}],\"essential\":true,\"image\":\"000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-products-consumer:latest\",\"name\":\"distribt-products-consumer\",\"portMappings\":[{\"containerPort\":8080,\"hostPort\":8080,\"protocol\":\"tcp\"}]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::000000000000:role/execution_role",
+            "family": "distribt-products-consumer",
+            "id": "distribt-products-consumer",
+            "inference_accelerator": [],
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "requires_compatibilities": [
+              "EC2"
+            ],
+            "revision": 2,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": null,
+            "tags_all": {},
+            "task_role_arn": "",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_iam_role.ecs_execution_role"
+          ]
+        },
+        {
+          "index_key": "distribt-subscriptions",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-subscriptions:2",
+            "arn_without_revision": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-subscriptions",
+            "container_definitions": "[{\"environment\":[{\"name\":\"ASPNETCORE_ENVIRONMENT\",\"value\":\"Development\"},{\"name\":\"ASPNETCORE_URLS\",\"value\":\"http://+:8080\"}],\"essential\":true,\"image\":\"000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-subscriptions:latest\",\"name\":\"distribt-subscriptions\",\"portMappings\":[{\"containerPort\":8080,\"hostPort\":8080,\"protocol\":\"tcp\"}]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::000000000000:role/execution_role",
+            "family": "distribt-subscriptions",
+            "id": "distribt-subscriptions",
+            "inference_accelerator": [],
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "requires_compatibilities": [
+              "EC2"
+            ],
+            "revision": 2,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": null,
+            "tags_all": {},
+            "task_role_arn": "",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_iam_role.ecs_execution_role"
+          ]
+        },
+        {
+          "index_key": "distribt-subscriptions-consumer",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-subscriptions-consumer:2",
+            "arn_without_revision": "arn:aws:ecs:us-east-1:000000000000:task-definition/distribt-subscriptions-consumer",
+            "container_definitions": "[{\"environment\":[{\"name\":\"ASPNETCORE_ENVIRONMENT\",\"value\":\"Development\"},{\"name\":\"ASPNETCORE_URLS\",\"value\":\"http://+:8080\"}],\"essential\":true,\"image\":\"000000000000.dkr.ecr.us-east-1.localhost:5100/distribt-subscriptions-consumer:latest\",\"name\":\"distribt-subscriptions-consumer\",\"portMappings\":[{\"containerPort\":8080,\"hostPort\":8080,\"protocol\":\"tcp\"}]}]",
+            "cpu": "256",
+            "enable_fault_injection": false,
+            "ephemeral_storage": [],
+            "execution_role_arn": "arn:aws:iam::000000000000:role/execution_role",
+            "family": "distribt-subscriptions-consumer",
+            "id": "distribt-subscriptions-consumer",
+            "inference_accelerator": [],
+            "ipc_mode": "",
+            "memory": "512",
+            "network_mode": "awsvpc",
+            "pid_mode": "",
+            "placement_constraints": [],
+            "proxy_configuration": [],
+            "requires_compatibilities": [
+              "EC2"
+            ],
+            "revision": 2,
+            "runtime_platform": [],
+            "skip_destroy": false,
+            "tags": null,
+            "tags_all": {},
+            "task_role_arn": "",
+            "track_latest": false,
+            "volume": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_ecr_repository.services",
+            "aws_iam_role.ecs_execution_role"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_eip",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address": null,
+            "allocation_id": "eipalloc-96fa9397bb92375fb",
+            "arn": "arn:aws:ec2:us-east-1::elastic-ip/eipalloc-96fa9397bb92375fb",
+            "associate_with_private_ip": null,
+            "association_id": "",
+            "carrier_ip": "",
+            "customer_owned_ip": "",
+            "customer_owned_ipv4_pool": "",
+            "domain": "vpc",
+            "id": "eipalloc-96fa9397bb92375fb",
+            "instance": "",
+            "ipam_pool_id": null,
+            "network_border_group": "",
+            "network_interface": "",
+            "private_dns": null,
+            "private_ip": "",
+            "ptr_record": "",
+            "public_dns": "ec2-54-33-188-198.compute-1.amazonaws.com",
+            "public_ip": "54.33.188.198",
+            "public_ipv4_pool": "",
+            "tags": {
+              "Name": "eip-nat-gateway"
+            },
+            "tags_all": {
+              "Name": "eip-nat-gateway"
+            },
+            "timeouts": null,
+            "vpc": true
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDAsInJlYWQiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "aws_internet_gateway.igw",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "ecs_execution_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::000000000000:role/execution_role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ecs-tasks.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-09-01T04:21:42Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "execution_role",
+            "inline_policy": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+            ],
+            "max_session_duration": 3600,
+            "name": "execution_role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {},
+            "tags_all": {},
+            "unique_id": "AROALZ3O0O8ERELSYI6G"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "ecs_node_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::000000000000:role/ecs_node_role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"}}],\"Version\":\"2022-10-17\"}",
+            "create_date": "2026-09-01T04:21:42Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "ecs_node_role",
+            "inline_policy": [],
+            "managed_policy_arns": [],
+            "max_session_duration": 3600,
+            "name": "ecs_node_role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {},
+            "tags_all": {},
+            "unique_id": "AROARNBP72Q1TKJ5LFQ6"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role_policy",
+      "name": "ecs_node_inline",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "ecs_node_role:ecs-node-permissions",
+            "name": "ecs-node-permissions",
+            "name_prefix": "",
+            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"ecs:CreateCluster\",\"ecs:DeregisterContainerInstance\",\"ecs:DiscoverPollEndpoint\",\"ecs:Poll\",\"ecs:RegisterContainerInstance\",\"ecs:StartTelemetrySession\",\"ecs:Submit*\",\"ecr:GetAuthorizationToken\",\"ecr:BatchCheckLayerAvailability\",\"ecr:GetDownloadUrlForLayer\",\"ecr:BatchGetImage\",\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}]}",
+            "role": "ecs_node_role"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.ecs_node_role"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "ecs_execution_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "execution_role-20260901042142703800000001",
+            "policy_arn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+            "role": "execution_role"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.ecs_execution_role"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_internet_gateway",
+      "name": "igw",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:internet-gateway/igw-ed5f364b",
+            "id": "igw-ed5f364b",
+            "owner_id": "000000000000",
+            "tags": {
+              "Name": "igw-lab"
+            },
+            "tags_all": {
+              "Name": "igw-lab"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_launch_template",
+      "name": "ecs_nodes",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1::launch-template/lt-6828ef903cb01f671",
+            "block_device_mappings": [],
+            "capacity_reservation_specification": [],
+            "cpu_options": [],
+            "credit_specification": [],
+            "default_version": 1,
+            "description": "",
+            "disable_api_stop": false,
+            "disable_api_termination": false,
+            "ebs_optimized": "",
+            "elastic_gpu_specifications": [],
+            "elastic_inference_accelerator": [],
+            "enclave_options": [],
+            "hibernation_options": [],
+            "iam_instance_profile": [
+              {
+                "arn": "arn:aws:iam::000000000000:instance-profile/ecs-node-permissions",
+                "name": ""
+              }
+            ],
+            "id": "lt-6828ef903cb01f671",
+            "image_id": "ami-abcde113123433",
+            "instance_initiated_shutdown_behavior": "",
+            "instance_market_options": [],
+            "instance_requirements": [],
+            "instance_type": "t2.micro",
+            "kernel_id": "",
+            "key_name": "",
+            "latest_version": 2,
+            "license_specification": [],
+            "maintenance_options": [],
+            "metadata_options": [],
+            "monitoring": [],
+            "name": "ecs-nodes-2026090104214793040000000a",
+            "name_prefix": "ecs-nodes-",
+            "network_interfaces": [],
+            "placement": [],
+            "private_dns_name_options": [],
+            "ram_disk_id": "",
+            "security_group_names": [],
+            "tag_specifications": [],
+            "tags": {
+              "Name": "ecs-node-template"
+            },
+            "tags_all": {
+              "Name": "ecs-node-template"
+            },
+            "update_default_version": null,
+            "user_data": "IyEvYmluL2Jhc2gKZWNobyAiRUNTX0NMVVNURVIgPSBkaXN0cmlidC1lY3MtY2x1c3RlciA+PiAvZXRjL2Vjcy9lY3MuY29uZmlnIgo=",
+            "vpc_security_group_ids": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_ecs_cluster.main",
+            "aws_iam_role.ecs_node_role",
+            "aws_iam_role_policy.ecs_node_inline"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lb",
+      "name": "main_alb",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_logs": [
+              {
+                "bucket": "",
+                "enabled": false,
+                "prefix": ""
+              }
+            ],
+            "arn": "arn:aws:elasticloadbalancing:us-east-1:000000000000:loadbalancer/app/distribt-alb/1aa63e4900374a85",
+            "arn_suffix": "app/distribt-alb/1aa63e4900374a85",
+            "client_keep_alive": 3600,
+            "connection_logs": [
+              {
+                "bucket": "",
+                "enabled": false,
+                "prefix": ""
+              }
+            ],
+            "customer_owned_ipv4_pool": "",
+            "desync_mitigation_mode": "defensive",
+            "dns_name": "distribt-alb-1aa63e4900374a85.elb.localhost.floci.io",
+            "dns_record_client_routing_policy": null,
+            "drop_invalid_header_fields": false,
+            "enable_cross_zone_load_balancing": null,
+            "enable_deletion_protection": false,
+            "enable_http2": true,
+            "enable_tls_version_and_cipher_suite_headers": false,
+            "enable_waf_fail_open": false,
+            "enable_xff_client_port": false,
+            "enable_zonal_shift": false,
+            "enforce_security_group_inbound_rules_on_private_link_traffic": "",
+            "id": "arn:aws:elasticloadbalancing:us-east-1:000000000000:loadbalancer/app/distribt-alb/1aa63e4900374a85",
+            "idle_timeout": 60,
+            "internal": false,
+            "ip_address_type": "ipv4",
+            "ipam_pools": [],
+            "load_balancer_type": "application",
+            "minimum_load_balancer_capacity": [],
+            "name": "distribt-alb",
+            "name_prefix": "",
+            "preserve_host_header": false,
+            "security_groups": [
+              "sg-2aa3eb8e166ef9441"
+            ],
+            "subnet_mapping": [
+              {
+                "allocation_id": "",
+                "ipv6_address": "",
+                "outpost_id": "",
+                "private_ipv4_address": "",
+                "subnet_id": "subnet-3cf6dd51"
+              },
+              {
+                "allocation_id": "",
+                "ipv6_address": "",
+                "outpost_id": "",
+                "private_ipv4_address": "",
+                "subnet_id": "subnet-f72efcef"
+              }
+            ],
+            "subnets": [
+              "subnet-3cf6dd51",
+              "subnet-f72efcef"
+            ],
+            "tags": {
+              "Environment": "Local-Floci",
+              "Name": "distribt-alb",
+              "Project": "Distribt"
+            },
+            "tags_all": {
+              "Environment": "Local-Floci",
+              "Name": "distribt-alb",
+              "Project": "Distribt"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47",
+            "xff_header_processing_mode": "append",
+            "zone_id": "Z35SXDOTRQ7X7K"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_security_group.alb_sg",
+            "aws_subnet.public_app_subnet_a",
+            "aws_subnet.public_app_subnet_b",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lb_listener",
+      "name": "http_listener",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "alpn_policy": null,
+            "arn": "arn:aws:elasticloadbalancing:us-east-1:000000000000:listener/app/distribt-alb/1aa63e4900374a85/c48286866bab4e0d",
+            "certificate_arn": null,
+            "default_action": [
+              {
+                "authenticate_cognito": [],
+                "authenticate_oidc": [],
+                "fixed_response": [],
+                "forward": [],
+                "order": 1,
+                "redirect": [],
+                "target_group_arn": "arn:aws:elasticloadbalancing:us-east-1:000000000000:targetgroup/distribt-api-tg/dc4ac863a5fa4e79",
+                "type": "forward"
+              }
+            ],
+            "id": "arn:aws:elasticloadbalancing:us-east-1:000000000000:listener/app/distribt-alb/1aa63e4900374a85/c48286866bab4e0d",
+            "load_balancer_arn": "arn:aws:elasticloadbalancing:us-east-1:000000000000:loadbalancer/app/distribt-alb/1aa63e4900374a85",
+            "mutual_authentication": [],
+            "port": 80,
+            "protocol": "HTTP",
+            "routing_http_request_x_amzn_mtls_clientcert_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_issuer_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_leaf_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_serial_number_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_subject_header_name": null,
+            "routing_http_request_x_amzn_mtls_clientcert_validity_header_name": null,
+            "routing_http_request_x_amzn_tls_cipher_suite_header_name": null,
+            "routing_http_request_x_amzn_tls_version_header_name": null,
+            "routing_http_response_access_control_allow_credentials_header_value": null,
+            "routing_http_response_access_control_allow_headers_header_value": null,
+            "routing_http_response_access_control_allow_methods_header_value": null,
+            "routing_http_response_access_control_allow_origin_header_value": null,
+            "routing_http_response_access_control_expose_headers_header_value": null,
+            "routing_http_response_access_control_max_age_header_value": null,
+            "routing_http_response_content_security_policy_header_value": null,
+            "routing_http_response_server_enabled": null,
+            "routing_http_response_strict_transport_security_header_value": null,
+            "routing_http_response_x_content_type_options_header_value": null,
+            "routing_http_response_x_frame_options_header_value": null,
+            "ssl_policy": "",
+            "tags": {},
+            "tags_all": {},
+            "tcp_idle_timeout_seconds": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsInVwZGF0ZSI6MzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "aws_lb.main_alb",
+            "aws_lb_target_group.api_tg",
+            "aws_security_group.alb_sg",
+            "aws_subnet.public_app_subnet_a",
+            "aws_subnet.public_app_subnet_b",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lb_target_group",
+      "name": "api_tg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:elasticloadbalancing:us-east-1:000000000000:targetgroup/distribt-api-tg/dc4ac863a5fa4e79",
+            "arn_suffix": "targetgroup/distribt-api-tg/dc4ac863a5fa4e79",
+            "connection_termination": null,
+            "deregistration_delay": "300",
+            "health_check": [
+              {
+                "enabled": true,
+                "healthy_threshold": 2,
+                "interval": 30,
+                "matcher": "200",
+                "path": "/health",
+                "port": "8080",
+                "protocol": "HTTP",
+                "timeout": 5,
+                "unhealthy_threshold": 3
+              }
+            ],
+            "id": "arn:aws:elasticloadbalancing:us-east-1:000000000000:targetgroup/distribt-api-tg/dc4ac863a5fa4e79",
+            "ip_address_type": "ipv4",
+            "lambda_multi_value_headers_enabled": false,
+            "load_balancer_arns": [
+              "arn:aws:elasticloadbalancing:us-east-1:000000000000:loadbalancer/app/distribt-alb/1aa63e4900374a85"
+            ],
+            "load_balancing_algorithm_type": null,
+            "load_balancing_anomaly_mitigation": null,
+            "load_balancing_cross_zone_enabled": null,
+            "name": "distribt-api-tg",
+            "name_prefix": "",
+            "port": 8080,
+            "preserve_client_ip": null,
+            "protocol": "HTTP",
+            "protocol_version": "",
+            "proxy_protocol_v2": false,
+            "slow_start": 0,
+            "stickiness": [
+              {
+                "cookie_duration": null,
+                "cookie_name": null,
+                "enabled": null,
+                "type": null
+              }
+            ],
+            "tags": {
+              "Environment": "Local-Floci",
+              "Name": "distribt-api-tg"
+            },
+            "tags_all": {
+              "Environment": "Local-Floci",
+              "Name": "distribt-api-tg"
+            },
+            "target_failover": [
+              {
+                "on_deregistration": null,
+                "on_unhealthy": null
+              }
+            ],
+            "target_group_health": [
+              {
+                "dns_failover": [
+                  {
+                    "minimum_healthy_targets_count": null,
+                    "minimum_healthy_targets_percentage": null
+                  }
+                ],
+                "unhealthy_state_routing": [
+                  {
+                    "minimum_healthy_targets_count": null,
+                    "minimum_healthy_targets_percentage": null
+                  }
+                ]
+              }
+            ],
+            "target_health_state": [
+              {
+                "enable_unhealthy_connection_termination": null,
+                "unhealthy_draining_interval": null
+              }
+            ],
+            "target_type": "ip",
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_nat_gateway",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allocation_id": "eipalloc-96fa9397bb92375fb",
+            "association_id": "",
+            "connectivity_type": "public",
+            "id": "nat-0df8888ef6e1cb5b8",
+            "network_interface_id": "",
+            "private_ip": "",
+            "public_ip": "",
+            "secondary_allocation_ids": [],
+            "secondary_private_ip_address_count": 0,
+            "secondary_private_ip_addresses": [],
+            "subnet_id": "subnet-f72efcef",
+            "tags": {
+              "Name": "main-nat-gateway"
+            },
+            "tags_all": {
+              "Name": "main-nat-gateway"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTgwMDAwMDAwMDAwMCwidXBkYXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "aws_eip.nat",
+            "aws_internet_gateway.igw",
+            "aws_subnet.public_app_subnet_a",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route",
+      "name": "private_nat_router",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "carrier_gateway_id": "",
+            "core_network_arn": "",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": "",
+            "destination_prefix_list_id": "",
+            "egress_only_gateway_id": "",
+            "gateway_id": "",
+            "id": "r-rtb-312a8d131080289494",
+            "instance_id": "",
+            "instance_owner_id": "",
+            "local_gateway_id": "",
+            "nat_gateway_id": "nat-0df8888ef6e1cb5b8",
+            "network_interface_id": "",
+            "origin": "CreateRoute",
+            "route_table_id": "rtb-312a8d13",
+            "state": "active",
+            "timeouts": null,
+            "transit_gateway_id": "",
+            "vpc_endpoint_id": "",
+            "vpc_peering_connection_id": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_eip.nat",
+            "aws_internet_gateway.igw",
+            "aws_nat_gateway.nat",
+            "aws_route_table.private_rt",
+            "aws_subnet.public_app_subnet_a",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "private_rt",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:route-table/rtb-312a8d13",
+            "id": "rtb-312a8d13",
+            "owner_id": "000000000000",
+            "propagating_vgws": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "nat-fa04e7976bbe2d787",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "rt-privada"
+            },
+            "tags_all": {
+              "Name": "rt-privada"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "public_rt",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:route-table/rtb-71feaa41",
+            "id": "rtb-71feaa41",
+            "owner_id": "000000000000",
+            "propagating_vgws": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "igw-ed5f364b",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "rt-publica"
+            },
+            "tags_all": {
+              "Name": "rt-publica"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_internet_gateway.igw",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "app_assoc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-8f6baae7",
+            "route_table_id": "rtb-312a8d13",
+            "subnet_id": "subnet-ed0af04e",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_route_table.private_rt",
+            "aws_subnet.private_app_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "db_assoc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-1644e584",
+            "route_table_id": "rtb-312a8d13",
+            "subnet_id": "subnet-b3c721a6",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_route_table.private_rt",
+            "aws_subnet.private_db_subnet",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "public_app_assoc_a",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-d314ac0c",
+            "route_table_id": "rtb-71feaa41",
+            "subnet_id": "subnet-f72efcef",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_internet_gateway.igw",
+            "aws_route_table.public_rt",
+            "aws_subnet.public_app_subnet_a",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "public_app_assoc_b",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-1f81f8db",
+            "route_table_id": "rtb-71feaa41",
+            "subnet_id": "subnet-3cf6dd51",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_internet_gateway.igw",
+            "aws_route_table.public_rt",
+            "aws_subnet.public_app_subnet_b",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "alb_sg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:security-group/sg-2aa3eb8e166ef9441",
+            "description": "Permite trafico HTTP/HTTPS desde el exterior",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-2aa3eb8e166ef9441",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "HTTP desde Internet",
+                "from_port": 80,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 80
+              },
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "HTTPS desde Internet",
+                "from_port": 443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 443
+              }
+            ],
+            "name": "alb-publico",
+            "name_prefix": "",
+            "owner_id": "000000000000",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "sg-alb-publico"
+            },
+            "tags_all": {
+              "Name": "sg-alb-publico"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "app_sg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:security-group/sg-7218aaf50baa262f6",
+            "description": "Permite trafico SOLO desde el Load Balancer Publico",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-7218aaf50baa262f6",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Comunicacion entre microservicios",
+                "from_port": 8080,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": true,
+                "to_port": 8080
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Trafico de la app desde el ALB",
+                "from_port": 8080,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-2aa3eb8e166ef9441"
+                ],
+                "self": false,
+                "to_port": 8080
+              }
+            ],
+            "name": "microservicios",
+            "name_prefix": "",
+            "owner_id": "000000000000",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "microservicios"
+            },
+            "tags_all": {
+              "Name": "microservicios"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_security_group.alb_sg",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "db_sg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:security-group/sg-727f3e340cba31882",
+            "description": "Permite trafico SOLO desde los microservicios",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-727f3e340cba31882",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Consul DNS TCP",
+                "from_port": 8600,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 8600
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Consul DNS UDP",
+                "from_port": 8600,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "udp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 8600
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Consul HTTP",
+                "from_port": 8500,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 8500
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Grafana",
+                "from_port": 3000,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 3000
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Graylog GELF TCP",
+                "from_port": 12201,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 12201
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Graylog GELF UDP",
+                "from_port": 12201,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "udp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 12201
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Graylog Syslog TCP",
+                "from_port": 1514,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 1514
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Graylog Syslog UDP",
+                "from_port": 1514,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "udp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 1514
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Graylog Web Interface",
+                "from_port": 9000,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 9000
+              },
+              {
+                "cidr_blocks": [],
+                "description": "HashiCorp Vault",
+                "from_port": 8200,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 8200
+              },
+              {
+                "cidr_blocks": [],
+                "description": "MongoDB",
+                "from_port": 27017,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 27017
+              },
+              {
+                "cidr_blocks": [],
+                "description": "MySQL",
+                "from_port": 3306,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 3306
+              },
+              {
+                "cidr_blocks": [],
+                "description": "OTel Collector Metrics",
+                "from_port": 8888,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 8888
+              },
+              {
+                "cidr_blocks": [],
+                "description": "OTel Collector Prometheus exporter",
+                "from_port": 8889,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 8889
+              },
+              {
+                "cidr_blocks": [],
+                "description": "OTel Collector gRPC",
+                "from_port": 4317,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 4317
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Prometheus",
+                "from_port": 9090,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 9090
+              },
+              {
+                "cidr_blocks": [],
+                "description": "RabbitMQ AMQP",
+                "from_port": 5672,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 5672
+              },
+              {
+                "cidr_blocks": [],
+                "description": "RabbitMQ Management",
+                "from_port": 15672,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 15672
+              },
+              {
+                "cidr_blocks": [],
+                "description": "Zipkin",
+                "from_port": 9411,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-7218aaf50baa262f6"
+                ],
+                "self": false,
+                "to_port": 9411
+              }
+            ],
+            "name": "bases-de-datos",
+            "name_prefix": "",
+            "owner_id": "000000000000",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "bases-de-datos"
+            },
+            "tags_all": {
+              "Name": "bases-de-datos"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_security_group.alb_sg",
+            "aws_security_group.app_sg",
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "private_app_subnet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:subnet/subnet-ed0af04e",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1a",
+            "availability_zone_id": "us-east-1-az1",
+            "cidr_block": "10.0.2.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-ed0af04e",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "000000000000",
+            "private_dns_hostname_type_on_launch": "",
+            "tags": {
+              "Name": "subnet-privada-app-1a"
+            },
+            "tags_all": {
+              "Name": "subnet-privada-app-1a"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "private_db_subnet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:subnet/subnet-b3c721a6",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1a",
+            "availability_zone_id": "us-east-1-az1",
+            "cidr_block": "10.0.3.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-b3c721a6",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "000000000000",
+            "private_dns_hostname_type_on_launch": "",
+            "tags": {
+              "Name": "subnet-privada-db-1a"
+            },
+            "tags_all": {
+              "Name": "subnet-privada-db-1a"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "public_app_subnet_a",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:subnet/subnet-f72efcef",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1a",
+            "availability_zone_id": "us-east-1-az1",
+            "cidr_block": "10.0.1.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-f72efcef",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "000000000000",
+            "private_dns_hostname_type_on_launch": "",
+            "tags": {
+              "Name": "subnet-public-app-1a"
+            },
+            "tags_all": {
+              "Name": "subnet-public-app-1a"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "public_app_subnet_b",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:subnet/subnet-3cf6dd51",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1b",
+            "availability_zone_id": "us-east-1-az1",
+            "cidr_block": "10.0.4.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-3cf6dd51",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "000000000000",
+            "private_dns_hostname_type_on_launch": "",
+            "tags": {
+              "Name": "subnet-public-app-1b"
+            },
+            "tags_all": {
+              "Name": "subnet-public-app-1b"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-f473eb47"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.main_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc",
+      "name": "main_vpc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:000000000000:vpc/vpc-f473eb47",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.0.0.0/16",
+            "default_network_acl_id": "acl-548e396ae284e92fb",
+            "default_route_table_id": "rtb-f24025ad2152fe780",
+            "default_security_group_id": "sg-fd4ddbe677c3596b6",
+            "dhcp_options_id": "dopt-default",
+            "enable_dns_hostnames": true,
+            "enable_dns_support": true,
+            "enable_network_address_usage_metrics": false,
+            "id": "vpc-f473eb47",
+            "instance_tenancy": "default",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_network_border_group": "",
+            "ipv6_ipam_pool_id": "",
+            "ipv6_netmask_length": 0,
+            "main_route_table_id": "rtb-f24025ad2152fe780",
+            "owner_id": "000000000000",
+            "tags": {
+              "Environment": "Local-Floci",
+              "Name": "vpc-distribuida-lab"
+            },
+            "tags_all": {
+              "Environment": "Local-Floci",
+              "Name": "vpc-distribuida-lab"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

@@ -25,6 +25,7 @@ provider "aws" {
     logs = "http://localhost:4566"
     iam   = "http://localhost:4566"  
     sts   = "http://localhost:4566"
+    autoscaling = "http://localhost:4566" 
   }
 }
 
