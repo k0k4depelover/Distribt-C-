@@ -1,4 +1,4 @@
-version: "3.9"
+
 services:
   rabbitmq:
     image: rabbitmq:3.8.34-management-alpine #management version needed to be able to have a User interface
@@ -116,7 +116,7 @@ services:
       - "8889:8889"   # Prometheus exporter metrics
       - "4317:4317"   # OTLP gRPC receiver
   prometheus:
-    image: bitnami/prometheus
+    image: prom/prometheus:latest
     container_name: prometheus
     volumes:
       - ./tools/telemetry/prometheus.yaml:/etc/prometheus/prometheus.yml

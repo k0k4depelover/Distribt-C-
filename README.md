@@ -92,3 +92,8 @@ Y luego simplemente ejecuta cada aplicacion de forma individual o en un compound
 
 ## Dale una estrella ⭐
 Si te gusta el proyecto no dudes en darle una estrella, hacer un fork junto a una PR o incluso apoyar económicamente el proyecto [donando un café](https://www.buymeacoffee.com/netmentor).
+
+
+
+PENDIENTE:
+Aun necesito mapear las bases de datos con los servicios de docker, por lo que debo revisar el services.tf y modificarlo aun.
